@@ -26,4 +26,10 @@ export class UserserviceService {
   public registration(user: RegisterModel):Observable<any> {
     return this.httpservice.post('http://localhost:8084/user/registration', user, this.httpOptions);
   }
+
+  public sendEmail(user: any) {
+    console.log(user);
+    return this.httpservice.post('http://localhost:8084/user/forgotpassword?email=' , user.email, this.httpOptions);
+    console.log('entered into registeruser in service');
+  }
 }

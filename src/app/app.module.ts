@@ -9,13 +9,15 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from '../app/containers/user-authentication/login/login.component';
 import { RegisterComponent } from '../app/containers/user-authentication/register/register.component';
+import { PasswordUpdateComponent } from './containers/user-authentication/password-update/password-update.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordUpdateComponent
   ],
   imports: [
     BrowserModule,
