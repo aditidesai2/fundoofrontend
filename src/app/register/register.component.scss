@@ -1,0 +1,42 @@
+.RegistrationMain {
+    //    width: 1000px;
+    text-align: centre;
+}
+
+html {}
+
+body {
+    padding-top: 5px;
+    // background-color: lightcoral;
+    background-image: url("https://thewallpaper.co//wp-content/uploads/2016/03preview/city-lights-bokeh-high-definition-wallpaper-for-desktop-background-download-pictures-download-wallpaper-hd-images-cool-1680x1050.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.row {
+    margin-top: 0px;
+}
+
+.mat-card {
+    margin-left: 100px;
+    margin-right: 500px;
+    margin-top: 40px;
+    opacity: 70%;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 1), 0 1px 1px 0 rgba(0, 0, 0, 1), 0 1px 3px 0 rgba(0, 0, 0, 1);
+}
+
+.register {}
+
+mat-toolbar {
+    padding-left: 250px;
+}
+
+.matt-card-actions,
+button,
+mat-raised-button {
+    background-color: cornflowerblue
+}
