@@ -8,6 +8,7 @@
 
 .emailField {
     padding: 20%;
+    box-sizing: border-box;
 }
 
 .passwordField {
@@ -23,10 +24,10 @@ mat-card-header {
 }
 
 .mat-card {
-    margin-top: 0px;
+    margin-top: 100px;
     margin-left: 350px;
     margin-right: 350px;
-    opacity: 65%;
+    opacity: 80%;
     background-color: oldlace;
 }
 
@@ -34,7 +35,7 @@ html,
 body {
     padding-top: 20px;
     // background-color: lightcoral;
-    background-image: url('https://media.istockphoto.com/photos/colorful-sticky-notes-seamless-background-picture-id471206670?k=6&m=471206670&s=612x612&w=0&h=PTj2e2-rG7kL9FnlMT61JWR08CBhiYITB1tUKzgJpuc=');
+    background-image: url('https://i.pinimg.com/originals/d6/97/59/d69759005031369dd6b7e534e10bc441.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -42,6 +43,7 @@ body {
 
 .mat-card-title {
     padding-left: 0px;
+    font-size: xx-large;
 }
 
 .mat-icon {}
@@ -64,4 +66,10 @@ body {
 button,
 mat-raised-button {
     background-color: cornflowerblue
+}
+
+.forgotpass {}
+
+.column {
+    margin-top: 50px;
 }

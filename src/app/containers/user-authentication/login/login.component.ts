@@ -3,6 +3,8 @@ import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms"
 import {UserserviceService} from "../../../services/userservice.service"
 import { UserModel } from '../../../model/user-model';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 
 
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit{
   username: any;
   password: any;
 
-  constructor(private userservice: UserserviceService, private router: Router){}
+  constructor(private userservice: UserserviceService, private router: Router, private matSnackBar:MatSnackBar){}
 
 
   ngOnInit() {
@@ -36,10 +38,13 @@ export class LoginComponent implements OnInit{
 
     this.userservice.login(this.loginForm.value).subscribe((response: any) => {
       console.log(response.message);
-      console.log(response.statuscode);
-      if (response.statuscode === 200) {
-        localStorage.setItem('token', response.token);
-        this.router.navigate(['/dashboard']);
+      console.log(response.statusCode);
+      if (response.statusCode === 200) {
+        this.matSnackBar.open('Successfully Logged in. Welcome!','ok',{duration:5000});
+
+        localStorage.setItem('token', response.obj);
+        console.log('Token valid: ', response.obj);
+        //this.router.navigate(['/dashboard']);
        } //else {
       //   this.router.navigate(['/login']);
       //   this.errorMessage = response.message;

@@ -10,16 +10,18 @@
 
 <body>
     <div class="LoginMainMain" fxLayout="column" fxLayoutAlign="space-around center">
-        <div fxLayout="column" fxLayoutAlign="space-around center">
-            <p class="fundoo"> FUNDOO </p>
-        </div>
+
 
         <mat-card>
 
             <div class="login-text" fxLayout="column" fxLayoutAlign="space-around center">
                 <mat-card-header>
-                    <mat-card-title>LOGIN</mat-card-title>
+                    <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
+
+                    <mat-card-title>FUNDOO</mat-card-title>
                     <mat-icon matSuffix>person</mat-icon>
+                    <mat-card-subtitle>Login</mat-card-subtitle>
+
                 </mat-card-header>
             </div>
 
@@ -51,14 +53,17 @@
                         <mat-card-actions><button mat-raised-button>Submit</button>
                             <!-- <div><a href=sendmail>Forgod Password ?</a></div> -->
                             <br/>
-                            <span class="newuser">
-                        
-
-                                <a routerLink="/passwordupdate">Forgot Password?</a>
-                       
-                             </span>
                         </mat-card-actions>
                     </div>
+                    <div class="forgotpass" fxLayout="row" fxLayoutAlign="space-around center">
+                        <span class="newuser">
+                        
+
+                                <a class="a" routerLink="/passwordupdate">Forgot Password?</a>
+                       
+                             </span>
+                    </div>
+
                     <div fxLayout="column" fxLayoutAlign="space-around center">
                         <nav>
                             <a routerLink="/register">New User?</a>

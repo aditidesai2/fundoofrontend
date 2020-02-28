@@ -20,7 +20,8 @@ export class UserserviceService {
 
   public login(user: UserModel):Observable<any>{
     console.log(user);
-    return this.httpservice.post(`http://localhost:8084/user/login`, user, this.httpOptions);
+    console.log('In login service');
+    return this.httpservice.post('http://localhost:8084/user/login', user, this.httpOptions);
   }
 
   public registration(user: RegisterModel):Observable<any> {
@@ -29,7 +30,7 @@ export class UserserviceService {
 
   public sendEmail(user: any) {
     console.log(user);
-    return this.httpservice.post('http://localhost:8084/user/forgotpassword?email=' , user.email, this.httpOptions);
+    return this.httpservice.post('http://localhost:8084/user/forgotpassword?email=', user, this.httpOptions);
     console.log('entered into registeruser in service');
   }
 }
