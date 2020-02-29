@@ -37,4 +37,9 @@ export class UserserviceService {
     console.log("calling to.."+`${this.activateUser}/${token}`);
     return this.httpservice.put('http://localhost:8085/user/verification/'+`${token}`,user,this.httpOptions);
   }
+
+  public updatePassword (user:any, token:string):Observable<any>
+  {
+    return this.httpservice.put('http://localhost:8085/user/updatePassword/'+`${token}`,user,this.httpOptions);
+  }
 }
