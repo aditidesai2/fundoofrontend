@@ -11,6 +11,7 @@ import { LoginComponent } from '../app/containers/user-authentication/login/logi
 import { RegisterComponent } from '../app/containers/user-authentication/register/register.component';
 import { PasswordUpdateComponent } from './containers/user-authentication/password-update/password-update.component';
 import { UserActivateComponent } from './containers/user-authentication/user-activate/user-activate.component';
+import { ForgotPasswordComponent } from './containers/user-authentication/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UserActivateComponent } from './containers/user-authentication/user-act
     LoginComponent,
     RegisterComponent,
     PasswordUpdateComponent,
-    UserActivateComponent
+    UserActivateComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

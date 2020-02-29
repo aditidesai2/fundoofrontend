@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { HttpService } from '../services/http-service.service'
 import { Observable } from 'rxjs';
-
-
-
 import { UserModel} from '../model/user-model'
 import { RegisterModel } from '../model/register-model';
 
