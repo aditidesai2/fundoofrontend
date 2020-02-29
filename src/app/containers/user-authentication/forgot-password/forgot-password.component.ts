@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
 import {UserserviceService} from "../../../services/userservice.service"
 import { UserModel } from '../../../model/user-model';
-import { Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { ActivatedRoute } from "@angular/router";
+import {Router,ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -14,42 +15,53 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 
 export class ForgotPasswordComponent implements OnInit {
   
-  forgotPasswordForm: FormGroup;
+  
+  forgotPasswordForm = new FormGroup(
+    {
+      email: new FormControl('', [Validators.required]),
+
+      newpassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      conpassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
+
+    }
+  );
   loading = true;
+  token:string;
 
-  constructor(private userservice: UserserviceService,
-    private router: Router) { }
 
+  constructor(private formBuilder: FormBuilder, private userservice: UserserviceService,private matSnackBar:MatSnackBar,private route: ActivatedRoute,private route2:Router) { 
+  }
   
 
 
   ngOnInit() {
 
-    this.forgotPasswordForm = new FormGroup(
-      {
-        email: new FormControl('', [Validators.required]),
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.token = params.get('token');
+    });
 
-        newpassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
-        conpassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
-
-      }
-    );
+  
   }
 
   onSubmit() {
     console.log(this.forgotPasswordForm.value);
     if (this.forgotPasswordForm.invalid) {
-      return this.router.navigate(['user/forgotPassword/:token']);
+      return this.route2.navigate(['user/forgotPassword/:token']);
     }
-    this.userservice.registration(this.forgotPasswordForm.value).subscribe((response: any) => {
-      console.log(response.message);
-      this.router.navigate(['/login']);
-    },
-      error => {
-        this.loading = false;
-      }
-    );
-  }
+    this.token=this.route.snapshot.paramMap.get("token");
+
+    this.userservice.updatePassword(this.forgotPasswordForm,this.token).subscribe((response: any) => {
+
+      this.route2.navigate(['/login']);
+      this.matSnackBar.open('Your Account updated SuccessFully','ok',{duration:4000});
+       },
+
+       (error: any) => {
+
+        this.matSnackBar.open('Bad Credentials','ok',{duration:4000});
+        console.log(error)
+      });
+    }
 
  
 
