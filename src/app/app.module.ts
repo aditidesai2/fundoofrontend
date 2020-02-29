@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from '../app/containers/user-authentication/login/login.component';
 import { RegisterComponent } from '../app/containers/user-authentication/register/register.component';
 import { PasswordUpdateComponent } from './containers/user-authentication/password-update/password-update.component';
+import { UserActivateComponent } from './containers/user-authentication/user-activate/user-activate.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PasswordUpdateComponent } from './containers/user-authentication/passwo
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordUpdateComponent
+    PasswordUpdateComponent,
+    UserActivateComponent
   ],
   imports: [
     BrowserModule,

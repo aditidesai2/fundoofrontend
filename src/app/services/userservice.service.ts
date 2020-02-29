@@ -21,16 +21,22 @@ export class UserserviceService {
   public login(user: UserModel):Observable<any>{
     console.log(user);
     console.log('In login service');
-    return this.httpservice.post('http://localhost:8084/user/login', user, this.httpOptions);
+    return this.httpservice.post('http://localhost:8085/user/login', user, this.httpOptions);
   }
 
   public registration(user: RegisterModel):Observable<any> {
-    return this.httpservice.post('http://localhost:8084/user/registration', user, this.httpOptions);
+    return this.httpservice.post('http://localhost:8085/user/registration', user, this.httpOptions);
   }
 
-  public sendEmail(user: any) {
+  public sendEmail(user: UserModel) {
     console.log(user);
-    return this.httpservice.post('http://localhost:8084/user/forgotpassword?email=', user, this.httpOptions);
+    return this.httpservice.post('http://localhost:8085/user/forgotPassword', user, this.httpOptions);
     console.log('entered into registeruser in service');
+  }
+
+  activateUser(user:any,token:string):Observable<any>
+  {
+    console.log("calling to.."+`${this.activateUser}/${token}`);
+    return this.httpservice.put('http://localhost:8085/user/activate',user,{responseType: 'text'});
   }
 }
