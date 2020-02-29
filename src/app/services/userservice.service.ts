@@ -4,6 +4,7 @@ import { HttpService } from '../services/http-service.service'
 import { Observable } from 'rxjs';
 
 
+
 import { UserModel} from '../model/user-model'
 import { RegisterModel } from '../model/register-model';
 
@@ -37,6 +38,6 @@ export class UserserviceService {
   activateUser(user:any,token:string):Observable<any>
   {
     console.log("calling to.."+`${this.activateUser}/${token}`);
-    return this.httpservice.put('http://localhost:8085/user/activate',user,{responseType: 'text'});
+    return this.httpservice.put('http://localhost:8085/user/activate',user,this.httpOptions);
   }
 }

@@ -1,19 +1,30 @@
-<div class="medium-list " style="align-items: center;">
-    <div clas="list-viewer-wrapper"><br><br><br><br>
-        <div class="form-items">
-            <div class="row threed">
-                <h1 style="font-style: oblique; text-align: center;text-transform: capitalize;text-decoration-style: wavy;">
-                    Fundoo Notes
-                </h1>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
 
-            <form (ngSubmit)="onActiveSubmit()" class="example-form">
-                <br><br><br>
-                <div>
-                    <button style="font-size: 20px;font-weight: bold; align-items: center;" mat-button type="submit" class="divider">Activate Account</button>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="main-div" align="center">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Thankyou for registering!</mat-card-title>
+                <mat-icon matSuffix>emoji_people</mat-icon>
+            </mat-card-header>
+            <form (ngSubmit)="onSubmit()">
+                <div class="body-Content">
+                    <button mat-stroked-button color="primary" type="submit">
+            Click here to activate account!          </button>
                 </div>
-                <br><br>
-                <p style="text-transform: capitalize; color: crimson;">*Please click on activate button to Verify User and Activate your Account After Activate Account You Can Login</p>
             </form>
-        </div>
+
+        </mat-card>
+
     </div>
+</body>
+
+</html>
