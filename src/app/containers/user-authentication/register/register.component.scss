@@ -20,9 +20,10 @@ body {
 
 .mat-card {
     margin-left: 100px;
-    margin-right: 500px;
+    margin-right: 200px;
     margin-top: 40px;
     opacity: 80%;
+    width: 500px;
 }
 
 .mat-card:not([class*=mat-elevation-z]) {

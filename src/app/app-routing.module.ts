@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'passwordupdate', component: PasswordUpdateComponent },
-  { path: 'active/:token', component: UserActivateComponent }
+  { path: 'user/verification/:token', component: UserActivateComponent }
 ];
 
 

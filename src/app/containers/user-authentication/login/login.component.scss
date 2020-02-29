@@ -29,6 +29,7 @@ mat-card-header {
     margin-right: 350px;
     opacity: 80%;
     background-color: oldlace;
+    width: 400px;
 }
 
 html,
@@ -68,7 +69,9 @@ mat-raised-button {
     background-color: cornflowerblue
 }
 
-.forgotpass {}
+.email {
+    width: 300px;
+}
 
 .column {
     margin-top: 50px;

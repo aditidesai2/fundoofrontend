@@ -35,9 +35,9 @@ export class UserserviceService {
     console.log('entered into registeruser in service');
   }
 
-  activateUser(user:any,token:string):Observable<any>
+   public activateUser(user:any,token:string):Observable<any>
   {
     console.log("calling to.."+`${this.activateUser}/${token}`);
-    return this.httpservice.put('http://localhost:8085/user/activate',user,this.httpOptions);
+    return this.httpservice.put('http://localhost:8085/user/verification/'+`${token}`,user,this.httpOptions);
   }
 }

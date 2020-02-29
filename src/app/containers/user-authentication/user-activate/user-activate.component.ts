@@ -34,7 +34,7 @@ export class UserActivateComponent implements OnInit {
 
   }
 
-  onActiveSubmit() {
+  onSubmit() {
     console.log("---------------------------------------");
 
     this.token=this.route.snapshot.paramMap.get("token");
