@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'passwordupdate', component: PasswordUpdateComponent },
   { path: 'user/verification/:token', component: UserActivateComponent },
-  { path: 'user/forgotPassword/:token',component: ForgotPasswordComponent }
+  { path: 'user/forgotPassword/:token',component: ForgotPasswordComponent },
+
 ];
 
 

@@ -16,15 +16,7 @@ import {Router,ParamMap} from '@angular/router';
 export class ForgotPasswordComponent implements OnInit {
   
   
-  forgotPasswordForm = new FormGroup(
-    {
-      email: new FormControl('', [Validators.required]),
-
-      newpassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      conpassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
-
-    }
-  );
+  forgotPasswordForm : FormGroup;
   loading = true;
   token:string;
 
@@ -36,6 +28,16 @@ export class ForgotPasswordComponent implements OnInit {
 
   ngOnInit() {
 
+    this.forgotPasswordForm=new FormGroup(
+      {
+        emailId: new FormControl('', [Validators.required]),
+  
+        password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+        confirmPassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
+  
+      }
+    );
+
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.token = params.get('token');
     });
@@ -45,19 +47,19 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmit() {
     console.log(this.forgotPasswordForm.value);
-    if (this.forgotPasswordForm.invalid) {
-      return this.route2.navigate(['user/forgotPassword/:token']);
-    }
-    this.token=this.route.snapshot.paramMap.get("token");
+    // if (this.forgotPasswordForm.invalid) {
+    //   return this.route2.navigate(['user/forgotPassword/:token']);
+    // }
+    
 
-    this.userservice.updatePassword(this.forgotPasswordForm,this.token).subscribe((response: any) => {
-
+    this.userservice.updatePassword(this.forgotPasswordForm.value,this.token).subscribe(response => {
+console.log ("Inside correct answer",response);
       this.route2.navigate(['/login']);
       this.matSnackBar.open('Your Account updated SuccessFully','ok',{duration:4000});
        },
 
-       (error: any) => {
-
+       error => {
+console.log("Inside error",error);
         this.matSnackBar.open('Bad Credentials','ok',{duration:4000});
         console.log(error)
       });

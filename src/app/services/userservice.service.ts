@@ -40,6 +40,7 @@ export class UserserviceService {
 
   public updatePassword (user:any, token:string):Observable<any>
   {
+    console.log("Inside update password service");
     return this.httpservice.put('http://localhost:8085/user/updatePassword/'+`${token}`,user,this.httpOptions);
   }
 }
