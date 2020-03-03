@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { RegisterComponent } from '../app/containers/user-authentication/registe
 import { PasswordUpdateComponent } from './containers/user-authentication/password-update/password-update.component';
 import { UserActivateComponent } from './containers/user-authentication/user-activate/user-activate.component';
 import { ForgotPasswordComponent } from './containers/user-authentication/forgot-password/forgot-password.component';
+import { DashboardComponent } from '../app/containers/dashboard/dashboard.component';
+import { SidenavComponent } from './containers/sidenav/sidenav.component';
+import { ToolbarComponent } from './containers/toolbar/toolbar.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { ForgotPasswordComponent } from './containers/user-authentication/forgot
     RegisterComponent,
     PasswordUpdateComponent,
     UserActivateComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    DashboardComponent,
+    SidenavComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +39,6 @@ import { ForgotPasswordComponent } from './containers/user-authentication/forgot
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

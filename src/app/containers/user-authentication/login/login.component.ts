@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit{
       console.log(response.message);
       console.log(response.statusCode);
       if (response.statusCode === 200) {
+        this.router.navigate(['/dashboard']);
         this.matSnackBar.open('Successfully Logged in. Welcome!','ok',{duration:5000});
+
 
         localStorage.setItem('token', response.obj);
         console.log('Token valid: ', response.obj);

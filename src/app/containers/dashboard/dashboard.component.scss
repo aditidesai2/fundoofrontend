@@ -1,0 +1,249 @@
+.app-bar {
+    background-color: white;
+    opacity: 70%;
+}
+
+.keep {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-style: bold;
+}
+
+.toolbar {
+    background-color: white;
+}
+
+.example-container {
+    width: flex;
+    height: 600px;
+    opacity: 80%;
+    // border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    padding: 5px;
+}
+
+.search {
+    width: 800px;
+    height: 25px;
+    background-color: lightgray;
+    position: relative;
+}
+
+.search-div {
+    margin-left: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    height: 5px;
+    left: 10%;
+    top: 2%;
+    background-color: lightgray;
+}
+
+.search-bar {
+    height: 35px;
+    padding: 0;
+    margin-left: 56px;
+    margin-right: 0px;
+    overflow: hidden;
+}
+
+.form-control {
+    // position: absolute;
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    width: 43vw;
+    height: 15px;
+    left: 22%;
+    top: 2%;
+}
+
+.clear-button {
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    width: 43vw;
+    height: 10px;
+    left: 53%;
+    top: 2%;
+}
+
+.resizedTextbox {
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-search {
+    display: flex;
+    border-radius: 15px;
+    // width: 80%;
+    height: 80%;
+    border: 0px;
+    font-size: 10px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    background-color: lightgray;
+}
+
+.searchmain {
+    // background-color: lightgray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    align-self: center;
+    background: none;
+    margin: none;
+}
+
+.searchButton {
+    align-self: center;
+}
+
+.resizedTextbox {
+    border-radius: 8px;
+    width: 550px;
+    // height: 20px;
+    border: 0px;
+    font-size: 15px;
+    outline: 0ch;
+    background-color: transparent;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+.refreshButton,
+.list {
+    padding-right: 15px;
+}
+
+.lastComponents {
+    margin-left: 10px;
+}
+
+.divider {
+    border-width: 1px;
+    // border-style: solid;
+    color: darkgray;
+}
+
+.appsButton {
+    margin-left: 80px
+}
+
+.firstButton {
+    border-radius: 25px;
+    margin-left: 0px;
+}
+
+.noteIcon,
+.reminderIcon {
+    float: left;
+    margin-top: 4px;
+    padding-right: 0px;
+    margin-left: none;
+}
+
+.sideNav-sidenav {
+    outline: none;
+    border: none;
+    width: 240px;
+}
+
+.note-label,
+.reminder-label {
+    float: left;
+    padding-left: 30px;
+}
+
+.secondButton {
+    border-radius: 25px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+}
+
+.remindersButton {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 240px;
+    height: 55px;
+}
+
+.notesButton,
+.arciveButton {
+    margin-top: 6px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 240px;
+    height: 55px;
+}
+
+.notesButton:focus {
+    background-color: rgba(255, 196, 0, 0.267);
+}
+
+.remindersButton:focus {
+    background-color: rgba(255, 196, 0, 0.267);
+    ;
+}
+
+.div-search:focus {
+    background-color: white;
+}
+
+.search-div {
+    background-color: white;
+}
+
+.resizedTextbox:focus {
+    background-color: white;
+}
+
+.searchButton:focus {
+    background-color: white;
+}
+
+.search:focus {
+    background-color: white;
+}
+
+.searchmain {
+    background-color: white;
+}
+
+.label {
+    height: 0.5px;
+    width: 1px;
+}
+
+.labelsClass {
+    margin-left: 0px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+div.labelsClass {
+    font-size: 12px;
+}
+
+.labelsButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

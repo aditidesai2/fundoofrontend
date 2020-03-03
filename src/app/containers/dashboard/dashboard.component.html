@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form>
+        <div>
+
+            <div class="app-bar">
+
+                <mat-toolbar class="toolbar">
+                    <button type="button" class="button" mat-button (click)="drawer.toggle()">
+                  <mat-icon matSuffix>menu</mat-icon>
+                </button>
+
+                    <img class="gb_la gb_ae" alt="" aria-hidden="true" src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" srcset="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_48dp.png 2x "
+                        style="width:40px;height:40px">
+
+                    <div class="keep">Keep</div>
+
+                    <div class="searchmain">
+                        <mat-card class="div-search" style="margin-left:100px" fxLayoutAlign="center" routerLinkActive="active">
+                            <button mat-icon-button class="searchButton">
+                      <mat-icon>search</mat-icon>
+                    </button>
+                            <input type="text" class="resizedTextbox" matInput placeholder="Search" autocomplete="off">
+                            <button mat-icon-button class="searchButton">
+                      <mat-icon>clear</mat-icon>
+                    </button>
+                        </mat-card>
+                    </div>
+
+                    <div class="lastComponents" fxLayout="row" fxLayoutAlign="space-between center">
+                        <div class="refreshButton" role="button">
+                            <button mat-icon-button>
+                      <mat-icon>refresh</mat-icon>
+                    </button>
+                        </div>
+                        <div class="list" role="button">
+                            <button mat-icon-button (click)="changeView(show)">
+                      <mat-icon *ngIf="show">view_stream</mat-icon>
+                      <mat-icon *ngIf="!show">view_module</mat-icon>
+                    </button>
+                        </div>
+                        <div class="settingButton" role="button">
+                            <button mat-icon-button>
+                      <mat-icon>settings</mat-icon>
+                    </button>
+                        </div>
+                    </div>
+                    <div class="appsButton" role="button">
+                        <button mat-icon-button>
+                    <mat-icon>apps</mat-icon>
+                  </button>
+                    </div>
+
+                </mat-toolbar>
+            </div>
+
+            <mat-divider class="divider"></mat-divider>
+
+
+
+            <mat-drawer-container class="example-container" autosize>
+                <mat-drawer #drawer class="sideNav-sidenav" mode="side" opened>
+
+                    <div class="firstButton">
+                        <button class="notesButton" mat-raised-button (click)="navigateToNotes()">
+      
+                    <mat-icon class="noteIcon">lightbulb_outline</mat-icon>
+                    <span class="note-label">Notes</span>
+                  </button>
+                    </div>
+
+                    <div class="secondButton">
+                        <button class="remindersButton" mat-raised-button>
+      
+      
+                    <mat-icon class="reminderIcon">notifications_none</mat-icon>
+                    <span class="reminder-label">Reminders</span>
+      
+                  </button>
+                    </div>
+                    <mat-divider class="divider"></mat-divider>
+                    <div class=labelsClass><span class="label">LABELS</span></div>
+
+                    <div class="secondButton">
+                        <div *ngFor="let label of listLabels">
+                            <button class="remindersButton" mat-raised-button>
+      
+      
+                      <mat-icon class="reminderIcon">label_important</mat-icon>
+                      <span class="reminder-label">{{ label.name }}</span>
+      
+      
+                    </button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="labelsButton" (click)="openPopup()">
+                        <button class="remindersButton" mat-raised-button>
+      
+      
+                    <mat-icon class="reminderIcon">create</mat-icon>
+                    <span class="reminder-label">Edit Labels</span>
+      
+                  </button>
+                    </div>
+
+
+
+                    <mat-divider class="divider"></mat-divider>
+
+                    <div class="firstButton">
+                        <button class="notesButton" mat-raised-button (click)="navigateToArchive()">
+      
+                    <mat-icon class="noteIcon">archive_outline</mat-icon>
+                    <span class="note-label">Archive</span>
+                  </button>
+                    </div>
+
+                    <div class="secondButton">
+                        <button class="remindersButton" mat-raised-button (click)="navigateToTrash()">
+      
+      
+                    <mat-icon class="reminderIcon">trash</mat-icon>
+                    <span class="reminder-label">Trash</span>
+      
+                  </button>
+                    </div>
+
+                </mat-drawer>
+                <!-- <app-fullcomponent></app-fullcomponent>  
+           <app-note></app-note> 
+             <app-display-notes></app-display-notes>    -->
+                <router-outlet></router-outlet>
+            </mat-drawer-container>
+
+        </div>
+    </form>
+</body>
+
+</html>

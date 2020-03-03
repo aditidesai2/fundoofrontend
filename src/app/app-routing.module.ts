@@ -5,6 +5,7 @@ import {RegisterComponent} from '../app/containers/user-authentication/register/
 import {PasswordUpdateComponent} from '../app/containers/user-authentication/password-update/password-update.component';
 import {UserActivateComponent} from '../app/containers/user-authentication/user-activate/user-activate.component';
 import {ForgotPasswordComponent} from '../app/containers/user-authentication/forgot-password/forgot-password.component'
+import { DashboardComponent } from '../app/containers/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'passwordupdate', component: PasswordUpdateComponent },
   { path: 'user/verification/:token', component: UserActivateComponent },
   { path: 'user/forgotPassword/:token',component: ForgotPasswordComponent },
+  { path: 'dashboard',component:DashboardComponent}
 
 ];
 
