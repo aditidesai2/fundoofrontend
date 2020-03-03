@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
     <div fxLayoutAlign="start start" fxLayout="column">
 
         <form>
@@ -45,19 +46,19 @@
                             </div>
                             <div class="list" role="button">
                                 <button mat-icon-button (click)="changeView(show)" matTooltip="Grid view">
-                      <mat-icon *ngIf="show">view_stream</mat-icon>
-                      <mat-icon *ngIf="!show">view_module</mat-icon>
+                      <mat-icon fontSet="material-icons-outlined" *ngIf="show">grid</mat-icon>
+                      <mat-icon fontSet="material-icons-outlined" *ngIf="!show">view_agenda</mat-icon>
                     </button>
                             </div>
                             <div class="settingButton" role="button">
                                 <button mat-icon-button matTooltip="Settings">
-                      <mat-icon>settings</mat-icon>
+                      <mat-icon fontSet="material-icons-outlined">settings</mat-icon>
                     </button>
                             </div>
                         </div>
                         <div class="appsButton" role="button">
                             <button mat-icon-button matTooltip="Google Apps">
-                    <mat-icon>apps</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined">apps</mat-icon>
                   </button>
                         </div>
 
@@ -67,83 +68,84 @@
                 <mat-divider class="divider"></mat-divider>
 
 
+                <div class=sidenagivationpanel>
+                    <mat-drawer-container class="example-container" autosize>
+                        <mat-drawer #drawer class="sideNav-sidenav" mode="side" opened>
 
-                <mat-drawer-container class="example-container" autosize>
-                    <mat-drawer #drawer class="sideNav-sidenav" mode="side" opened>
-
-                        <div class="firstButton">
-                            <button class="notesButton" mat-raised-button (click)="navigateToNotes()">
+                            <div class="firstButton">
+                                <button class="notesButton" mat-raised-button (click)="navigateToNotes()">
       
                     <mat-icon class="noteIcon">lightbulb_outline</mat-icon>
                     <span class="note-label">Notes</span>
                   </button>
-                        </div>
+                            </div>
 
-                        <div class="secondButton">
-                            <button class="remindersButton" mat-raised-button>
+                            <div class="secondButton">
+                                <button class="remindersButton" mat-raised-button>
       
       
                     <mat-icon class="reminderIcon">notifications_none</mat-icon>
                     <span class="reminder-label">Reminders</span>
       
                   </button>
-                        </div>
-                        <mat-divider class="divider"></mat-divider>
-                        <div class=labelsClass><span class="label">LABELS</span></div>
+                            </div>
+                            <mat-divider class="divider"></mat-divider>
+                            <div class=labelsClass><span class="label">LABELS</span></div>
 
-                        <div class="secondButton">
-                            <div *ngFor="let label of listLabels">
-                                <button class="remindersButton" mat-raised-button>
+                            <div class="secondButton">
+                                <div *ngFor="let label of listLabels">
+                                    <button class="remindersButton" mat-raised-button>
       
       
-                      <mat-icon class="reminderIcon">label_important</mat-icon>
+                      <mat-icon class="reminderIcon">label</mat-icon>
                       <span class="reminder-label">{{ label.name }}</span>
       
       
                     </button>
+                                </div>
                             </div>
-                        </div>
 
 
 
-                        <div class="labelsButton" (click)="openPopup()">
-                            <button class="remindersButton" mat-raised-button>
+                            <div class="labelsButton" (click)="openPopup()">
+                                <button class="remindersButton" mat-raised-button>
       
       
-                    <mat-icon class="reminderIcon">create</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined" class="reminderIcon">create</mat-icon>
                     <span class="reminder-label">Edit Labels</span>
       
                   </button>
-                        </div>
+                            </div>
 
 
 
-                        <mat-divider class="divider"></mat-divider>
+                            <mat-divider class="divider"></mat-divider>
 
-                        <div class="firstButton">
-                            <button class="notesButton" mat-raised-button (click)="navigateToArchive()">
+                            <div class="firstButton">
+                                <button class="notesButton" mat-raised-button (click)="navigateToArchive()">
       
-                    <mat-icon class="noteIcon">archive_outline</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined" class="noteIcon">archive</mat-icon>
                     <span class="note-label">Archive</span>
                   </button>
-                        </div>
+                            </div>
 
-                        <div class="secondButton">
-                            <button class="remindersButton" mat-raised-button (click)="navigateToTrash()">
+                            <div class="secondButton">
+                                <button class="remindersButton" mat-raised-button (click)="navigateToTrash()">
       
       
-                    <mat-icon class="reminderIcon">trash</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined" class="reminderIcon">delete</mat-icon>
                     <span class="reminder-label">Trash</span>
       
                   </button>
-                        </div>
+                            </div>
 
-                    </mat-drawer>
-                    <!-- <app-fullcomponent></app-fullcomponent>  
+                        </mat-drawer>
+                        <!-- <app-fullcomponent></app-fullcomponent>  
            <app-note></app-note> 
              <app-display-notes></app-display-notes>    -->
-                    <router-outlet></router-outlet>
-                </mat-drawer-container>
+                        <router-outlet></router-outlet>
+                    </mat-drawer-container>
+                </div>
 
             </div>
         </form>

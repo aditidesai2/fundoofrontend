@@ -1,17 +1,44 @@
+.material-icons-outlined,
+.material-icons.material-icons--outlined,
+.material-icons-two-tone,
+.material-icons.material-icons--two-tone,
+.material-icons-round,
+.material-icons.material-icons--round,
+.material-icons-sharp,
+.material-icons.material-icons--sharp {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    color: dimgray;
+}
+
+.material-icons-outlined,
+.material-icons.material-icons--outlined {
+    font-family: 'Material Icons Outlined';
+}
+
 .app-bar {
     background-color: white;
-    opacity: 70%;
+    // opacity: 70%;
 }
 
-.keep {
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    font-style: bold;
-}
-
+// .keep {
+//     padding: 10px;
+//     font-family: Arial, Helvetica, sans-serif;
+//     font-size: large;
+//     font-style: bold;
+// }
 .toolbar {
     background-color: white;
+    color: dimgray;
 }
 
 .button:hover {
@@ -21,7 +48,6 @@
 .example-container {
     width: flex;
     height: 600px;
-    opacity: 80%;
     // border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
@@ -102,6 +128,7 @@
     margin-top: 40px;
     margin-bottom: 50px;
     background-color: whitesmoke;
+    color: dimgray;
     ///////////
 }
 
@@ -155,7 +182,7 @@
 .divider {
     border-width: 1px;
     // border-style: solid;
-    color: darkgray;
+    color: dimgray;
 }
 
 .appsButton {
@@ -173,6 +200,7 @@
     margin-top: 4px;
     padding-right: 0px;
     margin-left: none;
+    color: dimgray;
 }
 
 .sideNav-sidenav {
@@ -185,6 +213,7 @@
 .reminder-label {
     float: left;
     padding-left: 30px;
+    color: black;
 }
 
 .secondButton {
@@ -245,6 +274,9 @@
     margin-left: 0px;
     padding-top: 10px;
     text-align: left;
+    color: dimgray;
+    font-style: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 div.labelsClass {
