@@ -73,7 +73,7 @@
                         <mat-drawer #drawer class="sideNav-sidenav" mode="side" opened>
 
                             <div class="firstButton">
-                                <button class="notesButton" mat-raised-button (click)="navigateToNotes()">
+                                <button class="notesButton" mat-button (click)="navigateToNotes()">
       
                     <mat-icon class="noteIcon">lightbulb_outline</mat-icon>
                     <span class="note-label">Notes</span>
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="secondButton">
-                                <button class="remindersButton" mat-raised-button>
+                                <button class="remindersButton" mat-button>
       
       
                     <mat-icon class="reminderIcon">notifications_none</mat-icon>
@@ -94,7 +94,7 @@
 
                             <div class="secondButton">
                                 <div *ngFor="let label of listLabels">
-                                    <button class="remindersButton" mat-raised-button>
+                                    <button class="remindersButton" mat-button>
       
       
                       <mat-icon class="reminderIcon">label</mat-icon>
@@ -108,7 +108,7 @@
 
 
                             <div class="labelsButton" (click)="openPopup()">
-                                <button class="remindersButton" mat-raised-button>
+                                <button class="remindersButton" mat-button>
       
       
                     <mat-icon fontSet="material-icons-outlined" class="reminderIcon">create</mat-icon>
@@ -122,7 +122,7 @@
                             <mat-divider class="divider"></mat-divider>
 
                             <div class="firstButton">
-                                <button class="notesButton" mat-raised-button (click)="navigateToArchive()">
+                                <button class="notesButton" mat-button (click)="navigateToArchive()">
       
                     <mat-icon fontSet="material-icons-outlined" class="noteIcon">archive</mat-icon>
                     <span class="note-label">Archive</span>
@@ -130,7 +130,7 @@
                             </div>
 
                             <div class="secondButton">
-                                <button class="remindersButton" mat-raised-button (click)="navigateToTrash()">
+                                <button class="remindersButton" mat-button (click)="navigateToTrash()">
       
       
                     <mat-icon fontSet="material-icons-outlined" class="reminderIcon">delete</mat-icon>
