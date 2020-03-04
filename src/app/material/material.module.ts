@@ -10,8 +10,11 @@ import {
   MatIconModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatDividerModule
+  MatDividerModule,
+  MatMenuModule
 } from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
  
@@ -32,7 +35,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     CommonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatMenuModule
   ],
   exports: [
     MatButtonModule,
@@ -46,7 +52,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatToolbarModule,
     CommonModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule { }

@@ -15,6 +15,8 @@ import { ForgotPasswordComponent } from './containers/user-authentication/forgot
 import { DashboardComponent } from '../app/containers/dashboard/dashboard.component';
 import { SidenavComponent } from './containers/sidenav/sidenav.component';
 import { ToolbarComponent } from './containers/toolbar/toolbar.component';
+import { NoteComponent } from './containers/note/note.component';
+
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { ToolbarComponent } from './containers/toolbar/toolbar.component';
     ForgotPasswordComponent,
     DashboardComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    
+    NoteComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { ToolbarComponent } from './containers/toolbar/toolbar.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]

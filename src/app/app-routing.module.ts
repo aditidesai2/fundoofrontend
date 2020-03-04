@@ -6,7 +6,7 @@ import {PasswordUpdateComponent} from '../app/containers/user-authentication/pas
 import {UserActivateComponent} from '../app/containers/user-authentication/user-activate/user-activate.component';
 import {ForgotPasswordComponent} from '../app/containers/user-authentication/forgot-password/forgot-password.component'
 import { DashboardComponent } from '../app/containers/dashboard/dashboard.component';
-
+import {NoteComponent} from '../app/containers/note/note.component'
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
   {path:'login', component: LoginComponent},
@@ -14,8 +14,12 @@ const routes: Routes = [
   { path: 'passwordupdate', component: PasswordUpdateComponent },
   { path: 'user/verification/:token', component: UserActivateComponent },
   { path: 'user/forgotPassword/:token',component: ForgotPasswordComponent },
-  { path: 'dashboard',component:DashboardComponent}
-
+  { path: 'dashboard',component:DashboardComponent,
+    children: [
+    { path: '', component: NoteComponent },
+    { path: 'notes', component: NoteComponent }]
+  
+    }
 ];
 
 

@@ -1,0 +1,105 @@
+<!-- <div fxLayout="column" fxLayoutAlign="start start">
+    <mat-card onclick()>
+        <mat-card-header>
+            <mat-card-title style="font-size: 20px;">Take a note ...</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content *ngIf="!collapsed">
+            <p>Take a note...</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="collapsed=true">Close</button>
+            <button mat-button (click)="collapsed=false">Open</button>
+        </mat-card-actions>
+    </mat-card>
+</div> -->
+<div fxLayoutAlign="space around center" fxLayout="column" fxFlex="100">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+
+    <mat-card *ngIf='!card' class="border">
+        <input placeholder="Take a note..." class="input" (click)="cardSwap1()">
+
+        <button mat-icon-button class="nav-button">
+    <mat-icon fontSet="material-icons-outlined">
+          check_box
+        </mat-icon></button>
+
+        <button mat-icon-button class="nav-button">
+        <mat-icon fontSet="material-icons-outlined">
+ 
+          brush
+        </mat-icon></button>
+
+        <button mat-icon-button class="nav-button">
+        <mat-icon fontSet="material-icons-outlined">
+
+          image
+        </mat-icon></button>
+
+    </mat-card>
+
+    <div class="div">
+        <mat-card *ngIf='card' class="border1">
+            <form ngSubmit="submit">
+                <div>
+                    <textarea matInput placeholder="Title" [formControl]="title" matTextareaAutosize class="input"></textarea>
+                </div>
+                <div>
+                    <textarea matInput placeholder="Description" [formControl]="description" matTextareaAutosize class="input">
+        </textarea>
+                </div>
+                <div>
+
+                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                    <mat-icon fontSet="material-icons-outlined">
+                        notifications_paused
+            </mat-icon>
+          </button>
+                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                    <mat-icon fontSet="material-icons-outlined">
+                        person_add
+            </mat-icon>
+          </button>
+                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                    <mat-icon fontSet="material-icons-outlined">
+                        color_lens
+                    </mat-icon>
+          </button>
+                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                    <mat-icon fontSet="material-icons-outlined">
+                        crop_original
+                    </mat-icon>
+                    </button>
+                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                    <mat-icon fontSet="material-icons-outlined">
+                        archive
+                    </mat-icon>
+                    </button>
+                    <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="menu">
+                    <mat-icon fontSet="material-icons-outlined">
+                        more_vert
+                    </mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" class="menuclass">
+                        <mat-list-item><button mat-button>Add label</button></mat-list-item>
+                        <mat-list-item><button mat-button>Add drawing</button></mat-list-item>
+                        <mat-list-item><button mat-button>Show checkboxes</button></mat-list-item>
+                    </mat-menu>
+                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                    <mat-icon fontSet="material-icons-outlined">
+                        undo
+                    </mat-icon>
+                    </button>
+                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                    <mat-icon fontSet="material-icons-outlined">
+                        redo
+</mat-icon>        
+  </button><button mat-button class="nav-button" (click)="cardSwap()">
+            Close</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+    <div>
+    </div>
+</div>
