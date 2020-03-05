@@ -41,3 +41,82 @@ textarea {
 .pinNotes {
     display: inline-flex;
 }
+
+.nav-button {
+    cursor: pointer;
+    align-items: flex-end;
+}
+
+.nav-button:hover {
+    cursor: pointer;
+    align-items: flex-end;
+    background-color: #F0F0F0;
+}
+
+.input {
+    size: 40%;
+}
+
+.mat-icon {}
+
+.mat-icon:hover {
+    opacity: 100%;
+}
+
+.image {
+    opacity: 75%;
+}
+
+.image:hover {
+    opacity: 100%;
+}
+
+.button:hover {
+    background-color: dimgray;
+}
+
+.pinbutton {
+    background-image: url('../../../assets/images/unpin.svg');
+    background-color: transparent;
+    border: none;
+    width: 3%;
+    opacity: 75%;
+    background-repeat: no-repeat;
+    margin-left: 0px;
+}
+
+.mat-card {
+    opacity: 75%;
+    border-radius: 10px;
+    box-shadow: dimgray;
+    margin-left: 200px;
+    margin-right: 200px;
+    ;
+}
+
+.mat-card-actions {
+    padding: 0;
+}
+
+.mat-form-field-infix {
+    padding: 0em;
+}
+
+mat-icon {
+    font-size: 18px;
+}
+
+.mat-input-container.app-input-no-underline .mat-input-underline {
+    display: none;
+}
+
+::placeholder {
+    color: dimgray;
+    font-style: bold;
+    ;
+}
+
+.mat-form-field-infix {
+    padding: 0;
+    border-top: solid transparent;
+}

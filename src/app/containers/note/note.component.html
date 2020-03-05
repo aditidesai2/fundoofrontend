@@ -16,88 +16,128 @@
 <div fxLayoutAlign="space around center" fxLayout="column" fxFlex="100">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
 
-    <mat-card *ngIf='!card' class="border">
-        <input placeholder="Take a note..." class="input" (click)="cardSwap1()">
-
-        <button mat-icon-button class="nav-button">
+    <mat-card *ngIf='!card' class="border" class="mat-elevation-z6">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" fxLayoutAlign="center end">
+                <mat-form-field appearance="none">
+                    <input style="border: none; " matInput placeholder="Take a note..." class="input" (click)="cardSwap1()">
+                </mat-form-field>
+            </div>
+            <span fxFlex></span>
+            <button mat-icon-button class="nav-button" matTooltip="New list">
     <mat-icon fontSet="material-icons-outlined">
           check_box
         </mat-icon></button>
 
-        <button mat-icon-button class="nav-button">
+            <button mat-icon-button class="nav-button" matTooltip="New note with drawing">
         <mat-icon fontSet="material-icons-outlined">
  
           brush
         </mat-icon></button>
 
-        <button mat-icon-button class="nav-button">
+            <button mat-icon-button class="nav-button" matTooltip="New note with image">
         <mat-icon fontSet="material-icons-outlined">
 
           image
         </mat-icon></button>
-
+        </div>
     </mat-card>
 
-    <div class="div">
-        <mat-card *ngIf='card' class="border1">
+    <div class="div" fxLayoutAlign="space around center" fxLayout="column">
+        <mat-card *ngIf='card' class="border1" class="mat-elevation-z6">
             <form ngSubmit="submit">
-                <div>
-                    <textarea matInput placeholder="Title" [formControl]="title" matTextareaAutosize class="input"></textarea>
-                </div>
-                <div>
-                    <textarea matInput placeholder="Description" [formControl]="description" matTextareaAutosize class="input">
-        </textarea>
-                </div>
-                <div>
+                <div class="titlebar">
+                    <mat-form-field appearance="none">
 
-                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                        <!-- <textarea matInputplaceholder="Title" matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"> -->
+                        <!-- </textarea> -->
+
+                        <textarea style="border: none; " matInput placeholder="Title" [formControl]="title" matTextareaAutosize class="input"></textarea>
+                    </mat-form-field>
+                    <span fxFlex></span>
+                    <button class="pinbutton" matTooltip="Pin note">
+                    <!-- <img class="image" style="border: none; width: 4%;" src="../../../assets/images/unpin.svg" height="50%" id="imgRem"> -->
+                </button>
+                </div>
+                <div class="descbar">
+
+                    <mat-form-field appearance="none">
+
+                        <textarea style="border: none; " matInput placeholder="Take a note..." [formControl]="description" matTextareaAutosize class="input" rows="3">
+        </textarea>
+                    </mat-form-field>
+
+
+
+                </div>
+
+
+
+                <div>
+                    <mat-card-actions>
+
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Remind me">
                     <mat-icon fontSet="material-icons-outlined">
                         notifications_paused
             </mat-icon>
           </button>
-                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Collaborator">
                     <mat-icon fontSet="material-icons-outlined">
                         person_add
             </mat-icon>
           </button>
-                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Change color">
                     <mat-icon fontSet="material-icons-outlined">
                         color_lens
                     </mat-icon>
           </button>
-                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Add image">
                     <mat-icon fontSet="material-icons-outlined">
                         crop_original
                     </mat-icon>
                     </button>
-                    <button margin="14px" mat-icon-button fxHide.xs="true">
-                    <mat-icon fontSet="material-icons-outlined">
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Archive">
+                    <mat-icon fontSet="material-icons-outlined"
+                    >
                         archive
                     </mat-icon>
                     </button>
-                    <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="menu">
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="menu" matTooltip="More">
                     <mat-icon fontSet="material-icons-outlined">
                         more_vert
                     </mat-icon>
                     </button>
-                    <mat-menu #menu="matMenu" class="menuclass">
-                        <mat-list-item><button mat-button>Add label</button></mat-list-item>
-                        <mat-list-item><button mat-button>Add drawing</button></mat-list-item>
-                        <mat-list-item><button mat-button>Show checkboxes</button></mat-list-item>
-                    </mat-menu>
-                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                        <mat-menu #menu="matMenu" class="menuclass">
+                            <mat-list-item><button mat-button>Delete note</button></mat-list-item>
+                            <mat-list-item><button mat-button>Add label</button></mat-list-item>
+                        </mat-menu>
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Undo">
                     <mat-icon fontSet="material-icons-outlined">
                         undo
                     </mat-icon>
                     </button>
-                    <button margin="14px" mat-icon-button fxHide.xs="true">
+                        <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Redo">
                     <mat-icon fontSet="material-icons-outlined">
                         redo
-</mat-icon>        
-  </button><button mat-button class="nav-button" (click)="cardSwap()">
-            Close</button>
+                   </mat-icon>       
+                </button>
+                        <span fxFlex></span>
+                        <button mat-button class="nav-button" (click)="cardSwap()"> Close </button>
+
+
+
+                    </mat-card-actions>
                 </div>
+
+
+                <!-- <div class="footer" fxLayout="column" fxLayoutAlign="end end">
+                    <mat-card-footer>
+                    </mat-card-footer>
+                </div> -->
+
+
             </form>
+
         </mat-card>
     </div>
     <div>
