@@ -1,9 +1,11 @@
+import { logging } from 'protractor';
+
 export class Note {
 
-
-	title: String;
-	description:String;
-	isArchived:Boolean;
-	isPinned:boolean;
-	isTrash:boolean;
+    n_id:number;
+	title: string;
+	description:string;
+	// isArchived:boolean;
+	// isPinned:boolean;
+	// isTrash:boolean;
 }

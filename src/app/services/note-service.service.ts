@@ -16,13 +16,13 @@ export class NoteserviceService {
   constructor(private _http: HttpClient, private httpservice: HttpService) { }
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'content-type': 'application/json' })
+    headers: new HttpHeaders({ 'content-type': 'application/json', token:localStorage.getItem('token') })
   };
 
-  public createNote(note:Note,token:string):Observable<any>{
+  public createNote(note:Note):Observable<any>{
     console.log("noteee"+note);
     
     
-    return this.httpservice.post( note,'http://localhost:8085/note/create '+`${token}`, this.httpOptions)
+    return this.httpservice.post('http://localhost:8085/note/create ', note, this.httpOptions)
   }
 }

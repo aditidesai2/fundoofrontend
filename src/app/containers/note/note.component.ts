@@ -61,9 +61,13 @@ export class NoteComponent implements OnInit {
     console.log("inside submit");
     
       console.log("Close button clicked and no error");
-      this.noteservice.createNote(this.createNoteform.value,localStorage.getItem('token')).subscribe(notes => {
+      this.noteservice.createNote(this.createNoteform.value).subscribe(response => {
+        console.log('Response ', response);
         this.snackBar.open('Note Created', 'Ok', { duration: 3000 });
-   
+    },
+    error => {
+      console.log(error);
+      this.snackBar.open('not creatrd', 'ok', { duration: 4000});
     });
   
 
