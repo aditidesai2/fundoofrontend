@@ -1,20 +1,3 @@
-<!-- <div fxLayout="column" fxLayoutAlign="start start">
-    <mat-card onclick()>
-        <mat-card-header>
-            <mat-card-title style="font-size: 20px;">Take a note ...</mat-card-title>
-        </mat-card-header>
-
-        <mat-card-content *ngIf="!collapsed">
-            <p>Take a note...</p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button (click)="collapsed=true">Close</button>
-            <button mat-button (click)="collapsed=false">Open</button>
-        </mat-card-actions>
-    </mat-card>
-</div> -->
-
-
 <div fxLayoutAlign="space around center" fxLayout="column" fxFlex="100">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
 
@@ -52,7 +35,7 @@
                     <mat-form-field appearance="none">
 
 
-                        <textarea style="border: none; " matInput placeholder="Title" [formControl]="title" matTextareaAutosize class="input"></textarea>
+                        <textarea style="border: none; " matInput placeholder="Title" formControlName="title" matTextareaAutosize class="input"></textarea>
                     </mat-form-field>
                     <span fxFlex></span>
                     <button class="pinbutton" matTooltip="Pin note">
@@ -62,7 +45,7 @@
 
                     <mat-form-field appearance="none">
 
-                        <textarea style="border: none; " matInput placeholder="Take a note..." [formControl]="description" matTextareaAutosize class="input" rows="3">
+                        <textarea style="border: none; " matInput placeholder="Take a note..." formControlName="description" matTextareaAutosize class="input" rows="3">
         </textarea>
                     </mat-form-field>
 
@@ -120,9 +103,9 @@
                         redo
                    </mat-icon>       
                 </button>
-                        <div (click)="onSubmit()">
+                        <div>
                             <span fxFlex></span>
-                            <button type="button" mat-button class="nav-button" (click)="cardSwap()"> Close </button>
+                            <button type="button" mat-button class="nav-button" (click)="onSubmit()"> Close </button>
 
                         </div>
 
@@ -137,3 +120,4 @@
     <div>
     </div>
 </div>
+<app-displaynotes></app-displaynotes>

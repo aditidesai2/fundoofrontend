@@ -16,6 +16,7 @@ import { DashboardComponent } from '../app/containers/dashboard/dashboard.compon
 import { SidenavComponent } from './containers/sidenav/sidenav.component';
 import { ToolbarComponent } from './containers/toolbar/toolbar.component';
 import { NoteComponent } from './containers/note/note.component';
+import { DisplaynotesComponent } from './containers/displaynotes/displaynotes.component';
 
 
 
@@ -31,7 +32,9 @@ import { NoteComponent } from './containers/note/note.component';
     SidenavComponent,
     ToolbarComponent,
     
-    NoteComponent
+    NoteComponent,
+    
+    DisplaynotesComponent
   ],
   imports: [
     BrowserModule,
