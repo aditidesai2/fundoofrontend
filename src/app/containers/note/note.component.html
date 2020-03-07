@@ -13,6 +13,8 @@
         </mat-card-actions>
     </mat-card>
 </div> -->
+
+
 <div fxLayoutAlign="space around center" fxLayout="column" fxFlex="100">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
 
@@ -20,7 +22,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between center">
             <div fxLayout="column" fxLayoutAlign="center end">
                 <mat-form-field appearance="none">
-                    <input style="border: none; " matInput placeholder="Take a note..." class="input" (click)="cardSwap1()">
+                    <input style="border: none; tab-size: 5px; " matInput placeholder="Take a note..." class="input" (click)="cardSwap1()">
                 </mat-form-field>
             </div>
             <span fxFlex></span>
@@ -45,18 +47,15 @@
 
     <div class="div" fxLayoutAlign="space around center" fxLayout="column">
         <mat-card *ngIf='card' class="border1" class="mat-elevation-z6">
-            <form ngSubmit="submit">
+            <form ngSubmit="submit" [formGroup]="createNoteform">
                 <div class="titlebar">
                     <mat-form-field appearance="none">
 
-                        <!-- <textarea matInputplaceholder="Title" matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"> -->
-                        <!-- </textarea> -->
 
                         <textarea style="border: none; " matInput placeholder="Title" [formControl]="title" matTextareaAutosize class="input"></textarea>
                     </mat-form-field>
                     <span fxFlex></span>
                     <button class="pinbutton" matTooltip="Pin note">
-                    <!-- <img class="image" style="border: none; width: 4%;" src="../../../assets/images/unpin.svg" height="50%" id="imgRem"> -->
                 </button>
                 </div>
                 <div class="descbar">
@@ -121,19 +120,14 @@
                         redo
                    </mat-icon>       
                 </button>
-                        <span fxFlex></span>
-                        <button mat-button class="nav-button" (click)="cardSwap()"> Close </button>
+                        <div (click)="onSubmit()">
+                            <span fxFlex></span>
+                            <button mat-button class="nav-button" (click)="cardSwap()"> Close </button>
 
-
+                        </div>
 
                     </mat-card-actions>
                 </div>
-
-
-                <!-- <div class="footer" fxLayout="column" fxLayoutAlign="end end">
-                    <mat-card-footer>
-                    </mat-card-footer>
-                </div> -->
 
 
             </form>
