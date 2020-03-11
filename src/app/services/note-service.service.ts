@@ -21,8 +21,6 @@ export class NoteserviceService {
 
   public createNote(note: any){
     console.log("noteee"+note);
-    
-    
     return this.httpservice.post('http://localhost:8085/note/create ', note, this.httpOptions)
   }
 
