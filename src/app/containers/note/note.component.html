@@ -33,8 +33,6 @@
             <form ngSubmit="submit" [formGroup]="createNoteform">
                 <div class="titlebar">
                     <mat-form-field appearance="none">
-
-
                         <textarea style="border: none; " matInput placeholder="Title" formControlName="title" matTextareaAutosize class="input"></textarea>
                     </mat-form-field>
                     <span fxFlex></span>
@@ -48,16 +46,9 @@
                         <textarea style="border: none; " matInput placeholder="Take a note..." formControlName="description" matTextareaAutosize class="input" rows="3">
         </textarea>
                     </mat-form-field>
-
-
-
                 </div>
-
-
-
                 <div>
                     <mat-card-actions>
-
                         <button class="nav-button" margin="14px" mat-icon-button fxHide.xs="true" matTooltip="Remind me">
                     <mat-icon fontSet="material-icons-outlined">
                         notifications_paused
@@ -108,16 +99,16 @@
                             <button type="button" mat-button class="nav-button" (click)="onSubmit()"> Close </button>
 
                         </div>
-
                     </mat-card-actions>
                 </div>
-
-
             </form>
-
         </mat-card>
     </div>
     <div>
     </div>
+    <!-- <app-displaynotes></app-displaynotes> -->
+
 </div>
-<app-displaynotes></app-displaynotes>
+<div class="popup" fxLayout="column" fxLayoutAlign="space-between center">
+    <app-displaynotes></app-displaynotes>
+</div>

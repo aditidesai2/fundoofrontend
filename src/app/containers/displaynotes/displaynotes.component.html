@@ -1,9 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="center center">
     <div>
-        <div *ngFor="let note of listNotes;let notetempid = index" class="noteCard">
+        <div *ngFor="let note of notes" class="noteCard">
 
             <mat-card class="matcard" style="margin-left:90px" autocomplete="off" role="combobox" flex="column">
-                <div (click)="openPopup(note)">
+                <div>
                     <mat-card-title class="content">
                         <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title" disabled>{{note.title}}</textarea>
                     </mat-card-title>
@@ -16,22 +16,22 @@
                 <div class="matCardFooter">
                     <mat-card-footer>
                         <button mat-icon-button>
-                                <mat-icon>add_alert</mat-icon>
-                            </button>
+                              <mat-icon>add_alert</mat-icon>
+                          </button>
                         <button mat-icon-button>
-                                <mat-icon>insert_photo</mat-icon>
-                            </button>
-                        <button mat-icon-button (click)="archivenote(note)">
-                                <mat-icon>archive</mat-icon>
-                            </button>
+                              <mat-icon>insert_photo</mat-icon>
+                          </button>
                         <button mat-icon-button>
-                                <mat-icon>person_add</mat-icon>
-                            </button>
+                              <mat-icon>archive</mat-icon>
+                          </button>
+                        <button mat-icon-button>
+                              <mat-icon>person_add</mat-icon>
+                          </button>
                         <button mat-icon-button [matMenuTriggerFor]="menu">
-                                <mat-icon>more_vert</mat-icon>
-                            </button>
+                              <mat-icon>more_vert</mat-icon>
+                          </button>
                         <mat-menu #menu="matMenu">
-                            <button mat-menu-item (click)="deletenote(note)">Delete Note</button>
+                            <button mat-menu-item>Delete Note</button>
                             <button mat-menu-item>Add label</button>
                         </mat-menu>
                     </mat-card-footer>

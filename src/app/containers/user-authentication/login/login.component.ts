@@ -41,7 +41,8 @@ export class LoginComponent implements OnInit{
         this.matSnackBar.open('Successfully Logged in. Welcome!','ok',{duration:5000});
 
 
-        localStorage.setItem('token', response.obj);
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('firstname',response.firstname);
         console.log('Token valid: ', response.obj);
         //this.router.navigate(['/dashboard']);
        } //else {

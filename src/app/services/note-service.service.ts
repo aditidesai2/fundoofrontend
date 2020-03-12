@@ -25,6 +25,7 @@ export class NoteserviceService {
   }
 
   public getNote() {
+    console.log("Inside getNote of service");
     return this.httpservice.get('http://localhost:8085/note/fetch/notes',  this.httpOptions);
   }
 }
