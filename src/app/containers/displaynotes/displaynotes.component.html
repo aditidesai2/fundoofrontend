@@ -4,7 +4,7 @@
     <div>
         <div *ngFor="let note of notes" class="noteCard">
 
-            <mat-card class="matcard" style="margin-left:90px" autocomplete="off" role="combobox" flex="row">
+            <mat-card class="mat-elevation-z0 matcard " style="margin-left:90px" autocomplete="off" role="combobox" flex="row" matBadge="tick" matBadgePosition="before" matBadgeColor="black">
                 <div>
                     <mat-card-title class="content">
                         <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title" disabled>{{note.title}}</textarea>
