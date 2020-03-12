@@ -5,7 +5,17 @@
 }
 
 .matcard {
-    border-radius: 18px;
+    margin-top: 30px;
+    border-radius: 12px;
+    opacity: 75%;
+    // border-style: solid;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgray;
+}
+
+mat-icon {
+    font-size: 18px;
 }
 
 noteTitle {
@@ -42,4 +52,5 @@ noteTitle {
     margin-bottom: 0px;
     background-color: #fff;
     border-color: #e0e0e0;
+    font-size: small;
 }
