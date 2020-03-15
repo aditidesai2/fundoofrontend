@@ -1,20 +1,20 @@
 import { Component, OnInit } from "@angular/core";
-import { NoteserviceService } from "../../services/note-service.service";
+import { NoteserviceService } from "../../../services/note-service.service";
 import { MatSnackBar } from "@angular/material";
 import { Router } from "@angular/router";
 import { FormBuilder } from "@angular/forms";
 import { Note } from "src/app/model/note.model";
 
 @Component({
-  selector: "app-displaynotes",
-  templateUrl: "./displaynotes.component.html",
-  styleUrls: ["./displaynotes.component.scss"]
+  selector: "app-trashed-notes",
+  templateUrl: "./trashed-notes.component.html",
+  styleUrls: ["./trashed-notes.component.scss"]
 })
-export class DisplaynotesComponent implements OnInit {
+export class TrashedNotesComponent implements OnInit {
   constructor(
-    private _router: Router,
-    private _snackBar: MatSnackBar,
-    private _formBuilder: FormBuilder,
+    // private _router: Router,
+    // private _snackBar: MatSnackBar,
+    // private _formBuilder: FormBuilder,
     private _noteService: NoteserviceService
   ) {}
 
@@ -23,17 +23,16 @@ export class DisplaynotesComponent implements OnInit {
 
   ngOnInit() {
     this._noteService.autoRefesh.subscribe(() => {
-      this.getAllNotes();
+      this.getAllTrashedNotes();
     });
-    this.getAllNotes();
+    this.getAllTrashedNotes();
   }
-  getAllNotes() {
+  getAllTrashedNotes() {
     console.log("get note called");
-    this._noteService.getNote().subscribe((response: any) => {
-      this.notes = response.notes;
-      console.log("response ++++", response);
+    this._noteService.getAllTrashedNotes().subscribe((response: any) => {
+      this.notes = response.object;
+      console.log("response ++++", response.object);
       console.log("all the notes in list notes", this.notes);
-      console.log("value", this.notes.toString);
     });
   }
   openPopup(note: any) {
