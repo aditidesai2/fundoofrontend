@@ -1,24 +1,28 @@
-<mat-card-footer fxLayout="row" fxLayoutAlign="space-between end">
+<mat-card-footer fxLayout="row" fxLayoutAlign="space-around end">
+    <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet"
+  />
     <button mat-icon-button matTooltip="Remind me">
-      <mat-icon>add_alert</mat-icon>
+      <mat-icon fontSet="material-icons-outlined">add_alert</mat-icon>
     </button>
     <button mat-icon-button>
-      <mat-icon matTooltip="Collaborator">person_add</mat-icon>
+      <mat-icon fontSet="material-icons-outlined" matTooltip="Collaborator">person_add</mat-icon>
     </button>
     <button mat-icon-button matTooltip="Change color">
-      <mat-icon>palette</mat-icon>
+      <mat-icon fontSet="material-icons-outlined">palette</mat-icon>
     </button>
     <button mat-icon-button matTooltip="Add Image">
-      <mat-icon>crop_original</mat-icon>
+      <mat-icon fontSet="material-icons-outlined">crop_original</mat-icon>
     </button>
     <ng-container *ngIf="!note.archived; else unarchive">
       <button mat-icon-button matTooltip="Archive" (click)="archive()">
-        <mat-icon>archive</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
       </button>
     </ng-container>
     <ng-template #unarchive>
       <button mat-icon-button matTooltip="Unarchive" (click)="archive()">
-        <mat-icon>unarchive</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">unarchive</mat-icon>
       </button>
     </ng-template>
   
