@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "fundoofront"
+  "defaultProject": "fundoofront",
+  "cli": {
+    "analytics": "b2a59218-5a13-4d55-a713-e6edba2b090a"
+  }
 }

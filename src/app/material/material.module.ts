@@ -12,7 +12,9 @@ import {
   MatSidenavModule,
   MatDividerModule,
   MatMenuModule ,
-  MatBadgeModule
+  MatBadgeModule,
+  
+  MatDialogModule
 } from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -40,7 +42,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatExpansionModule,
     MatGridListModule,
     MatMenuModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule
     
   ],
   exports: [
@@ -59,7 +62,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatExpansionModule,
     MatGridListModule,
     MatMenuModule ,
-    MatBadgeModule
+    MatBadgeModule,
+
+    MatDialogModule
   ]
 })
 export class MaterialModule { }

@@ -20,6 +20,8 @@ import { DisplaynotesComponent } from "./containers/displaynotes/displaynotes.co
 import { ReminderNotesComponent } from "./containers/dashboard/reminder-notes/reminder-notes.component";
 import { ArchivedNotesComponent } from "./containers/dashboard/archived-notes/archived-notes.component";
 import { TrashedNotesComponent } from "./containers/dashboard/trashed-notes/trashed-notes.component";
+import { IconListComponent } from './containers/dashboard/icon-list/icon-list.component';
+import { UpdateNoteComponent } from './containers/dashboard/update-note/update-note.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { TrashedNotesComponent } from "./containers/dashboard/trashed-notes/tras
     DisplaynotesComponent,
     ReminderNotesComponent,
     ArchivedNotesComponent,
-    TrashedNotesComponent
+    TrashedNotesComponent,
+    IconListComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ import { TrashedNotesComponent } from "./containers/dashboard/trashed-notes/tras
     ReactiveFormsModule,
     HttpClientModule
   ],
+  entryComponents: [ UpdateNoteComponent],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

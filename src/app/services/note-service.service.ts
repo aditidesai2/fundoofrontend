@@ -22,6 +22,10 @@ export class NoteserviceService {
   private _content = new BehaviorSubject<number>(0);
   public share = this._content.asObservable();
 
+
+  private getAllPinnedNotesUrl: string = `${environment.NOTE_API_URL +
+    environment.GET_ALL_PINNED_NOTES_URL}`;
+
   public get autoRefesh() {
     return this._subject;
   }
@@ -73,4 +77,147 @@ export class NoteserviceService {
       this.httpOptions
     );
   }
+
+  public getAllPinnedNotes() {
+    console.log("archived Service Reached");
+    return this.httpservice.get(
+      this.getAllPinnedNotesUrl,
+      this.httpOptions
+    );
+  }
+
+  public updateNote(note: Note) {
+    console.log(
+      "fetching token from header : ",
+      this.httpOptions,
+      "note for updation : ",
+      note
+    );
+    return this.httpservice
+      .put(
+        `${environment.NOTE_API_URL + environment.UPDATE_NOTE_URL}`,
+        note,
+        this.httpOptions
+      )
+      .pipe(
+        tap(() => {
+          this._subject.next();
+        })
+      );
+  }
+  public deleteNote(noteId: number) {
+    console.log("service reached with id : " + noteId);
+    console.log(
+      `${environment.NOTE_API_URL}` +
+        "/" +
+        noteId +
+        `${environment.DELETE_NOTE_URL}`
+    );
+    return this.httpservice
+      .delete(
+        `${environment.NOTE_API_URL}` +
+          "/" +
+          noteId +
+          `${environment.DELETE_NOTE_URL}`,
+        this.httpOptions
+      )
+      .pipe(
+        tap(() => {
+          this._subject.next();
+        })
+      );
+  }
+
+  public archiveNote(noteId: number) {
+    console.log("service reached with id : " + noteId);
+    console.log(
+      `${environment.NOTE_API_URL}` +
+        "/" +
+        noteId +
+        `${environment.ARCHIVE_NOTE_URL}`
+    );
+    return this.httpservice
+      .delete(
+        `${environment.NOTE_API_URL}` +
+          "/" +
+          noteId +
+          `${environment.ARCHIVE_NOTE_URL}`,
+        this.httpOptions
+      )
+      .pipe(
+        tap(() => {
+          this._subject.next();
+        })
+      );
+  }
+  public deleteForeverNote(noteId: number) {
+    console.log("service reached with id : " + noteId);
+    console.log(
+      `${environment.NOTE_API_URL}` +
+        "/" +
+        noteId +
+        `${environment.DELETE_FOREVER_NOTE_URL}`
+    );
+    return this.httpservice
+      .delete(
+        `${environment.NOTE_API_URL}` +
+          "/" +
+          noteId +
+          `${environment.DELETE_FOREVER_NOTE_URL}`,
+        this.httpOptions
+      )
+      .pipe(
+        tap(() => {
+          this._subject.next();
+        })
+      );
+  }
+
+  public restoreNote(noteId: number) {
+    console.log("service reached with id : " + noteId);
+    console.log(
+      `${environment.NOTE_API_URL}` +
+        "/" +
+        noteId +
+        `${environment.RESTORE_NOTE_URL}`
+    );
+    return this.httpservice
+      .put(
+        `${environment.NOTE_API_URL}` +
+          "/" +
+          noteId +
+          `${environment.RESTORE_NOTE_URL}`,
+        {},
+        this.httpOptions
+      )
+      .pipe(
+        tap(() => {
+          this._subject.next();
+        })
+      );
+  }
+
+  public pinUnpinNote(noteId: number) {
+    console.log("service reached with id : " + noteId);
+    console.log(
+      `${environment.NOTE_API_URL}` +
+        "/" +
+        noteId +
+        `${environment.PINNED_UNPINNED_NOTE_URL}`
+    );
+    return this.httpservice
+      .patch(
+        `${environment.NOTE_API_URL}` +
+          "/" +
+          noteId +
+          `${environment.PINNED_UNPINNED_NOTE_URL}`,
+        {},
+        this.httpOptions
+      )
+      .pipe(
+        tap(() => {
+          this._subject.next();
+        })
+      );
+}
 }
