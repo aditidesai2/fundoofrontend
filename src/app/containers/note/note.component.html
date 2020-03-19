@@ -1,11 +1,11 @@
 <div fxLayoutAlign="space around center" fxLayout="column" fxFlex="100">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
 
-    <mat-card *ngIf='!card' class="border" class="mat-elevation-z6">
+    <mat-card *ngIf='!card' class="border" class="border">
         <div fxLayout="row" fxLayoutAlign="space-between center">
             <div fxLayout="column" fxLayoutAlign="center end">
                 <mat-form-field appearance="none">
-                    <input style="border: none; tab-size: 5px; " matInput placeholder="Take a note..." class="input" (click)="cardSwap1()">
+                    <input style="border: none; " matInput placeholder="Take a note..." class="input" (click)="cardSwap1()">
                 </mat-form-field>
             </div>
             <span fxFlex></span>
@@ -29,7 +29,7 @@
     </mat-card>
 
     <div class="div" fxLayoutAlign="space around center" fxLayout="column">
-        <mat-card *ngIf='card' class="border1" class="mat-elevation-z6">
+        <mat-card *ngIf='card'  class="list-view-mat-card">
             <form ngSubmit="submit" [formGroup]="createNoteform">
                 <div class="titlebar">
                     <mat-form-field appearance="none">
@@ -106,9 +106,11 @@
     </div>
     <div>
     </div>
-    <!-- <app-displaynotes></app-displaynotes> -->
+  
     <div class="popup" fxLayout="row" fxLayoutAlign="center center">
         <app-displaynotes></app-displaynotes>
     </div>
 
 </div>
+
+

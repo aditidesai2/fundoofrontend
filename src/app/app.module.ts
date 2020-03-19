@@ -22,6 +22,7 @@ import { ArchivedNotesComponent } from "./containers/dashboard/archived-notes/ar
 import { TrashedNotesComponent } from "./containers/dashboard/trashed-notes/trashed-notes.component";
 import { IconListComponent } from './containers/dashboard/icon-list/icon-list.component';
 import { UpdateNoteComponent } from './containers/dashboard/update-note/update-note.component';
+import { PinNoteComponent } from './containers/dashboard/pin-note/pin-note.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UpdateNoteComponent } from './containers/dashboard/update-note/update-n
     ArchivedNotesComponent,
     TrashedNotesComponent,
     IconListComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    PinNoteComponent
   ],
   imports: [
     BrowserModule,

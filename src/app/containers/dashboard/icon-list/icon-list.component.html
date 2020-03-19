@@ -13,11 +13,12 @@
       <mat-icon fontSet="material-icons-outlined">palette</mat-icon>
     </button>
 
-    <mat-menu #colorlist="matMenu" [overlapTrigger]="false">
-      <ng-template matMenuContent>
+    <mat-menu [ngStyle]="{ 'background-color': white}" #colorlist="matMenu" [overlapTrigger]="false" class="color">
+      <ng-template matMenuContent >
         <div
           fxLayout="row"
           fxLayoutGap="10px"
+          fxLayout="space-around center"
           style="margin-top: 1px"
           *ngFor="let colorsRow of colorsList"
         >
@@ -26,7 +27,7 @@
               [ngStyle]="{ 'background-color': color.colorCode }"
               (click)="changeColor(color)"
               matTooltip="{{ color.name }}"
-              mat-mini-fab
+              mat-mini-fab class="mat-elevation-z0"
             ></button>
           </div>
         </div>

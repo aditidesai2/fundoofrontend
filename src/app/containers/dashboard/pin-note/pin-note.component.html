@@ -1,0 +1,6 @@
+<div *ngIf="!isPinned" (click)="pin=!pin">
+    <a><img src="assets/icons/unpin.svg" id="pin" (click)="onPinNote(note.noteId)" style="margin-left: 230px;"></a>
+</div>
+ <div *ngIf="isPinned" (click)="isPinned=!isPinned">
+    <a><img src="assets/icons/pinned.svg" id="pin" (click)="onPinNote(note.noteId)" style="margin-left: 230px;"></a>
+</div> 

@@ -108,7 +108,7 @@ public noteColor: Color;
         })
       );
   }
-  public deleteNote(noteId: number) {
+  public deleteNote(noteId: any) {
     console.log("service reached with id : " + noteId);
     console.log(
       `${environment.NOTE_API_URL}` +
@@ -120,7 +120,7 @@ public noteColor: Color;
       .delete(
         `${environment.NOTE_API_URL}` +
           "/" +
-          noteId +
+          `${noteId}` +
           `${environment.DELETE_NOTE_URL}`,
         this.httpOptions
       )
@@ -165,7 +165,7 @@ public noteColor: Color;
       .delete(
         `${environment.NOTE_API_URL}` +
           "/" +
-          noteId +
+          `${noteId}` +
           `${environment.DELETE_FOREVER_NOTE_URL}`,
         this.httpOptions
       )
@@ -176,19 +176,19 @@ public noteColor: Color;
       );
   }
 
-  public restoreNote(noteId: number) {
+  public restoreNote(noteId: any) {
     console.log("service reached with id : " + noteId);
     console.log(
       `${environment.NOTE_API_URL}` +
         "/" +
-        noteId +
+        `${noteId}` +
         `${environment.RESTORE_NOTE_URL}`
     );
     return this.httpservice
       .put(
         `${environment.NOTE_API_URL}` +
           "/" +
-          noteId +
+          `${noteId}` +
           `${environment.RESTORE_NOTE_URL}`,
         {},
         this.httpOptions

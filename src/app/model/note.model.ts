@@ -3,10 +3,12 @@ import { ExecFileSyncOptionsWithBufferEncoding } from 'child_process';
 
 export class Note {
 	n_id:number;
-title: string;
+    title: string;
 	description:string;
 	isArchived:boolean;
 	isTrashed:boolean;
 	isPinned:boolean;
 	updatedtime:any;
+	color:string;
+	u_id: number;
 }

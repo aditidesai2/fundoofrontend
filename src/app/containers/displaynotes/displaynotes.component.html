@@ -4,13 +4,15 @@
     <div>
         <div *ngFor="let note of notes" class="noteCard">
 
-            <mat-card class="mat-elevation-z0 matcard " style="margin-left:90px" autocomplete="off" role="combobox" flex="row" [ngStyle]="{'background-color':note.color}" matBadge="tick" matBadgePosition="before" matBadgeColor="black">
+            <mat-card class="mat-elevation-z0 matcard " style="margin-left:90px" autocomplete="off" role="combobox" flex="row" [ngStyle]="{'background-color':note.color}" >
+                <app-pin-note [note]="note" (click)="onClickNoteId(note.noteId)"></app-pin-note>
                 <div>
-                    <mat-card-title class="content"  (click)="openDialog(note)">
-                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title">{{note.title}}</textarea>
+                    <mat-card-title class="content"  (click)="openDialog(note)" [ngStyle]="{'background-color':note.color}">
+                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title" [ngStyle]="{'background-color':note.color}">{{note.title}}</textarea>
                     </mat-card-title>
-                    <mat-card-content class="content" (click)="openDialog(note)">
-                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Description">{{note.description}}</textarea>
+
+                    <mat-card-content class="content" (click)="openDialog(note)" [ngStyle]="{'background-color':note.color}">
+                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" [ngStyle]="{'background-color':note.color}" placeholder="Description">{{note.description}}</textarea>
                     </mat-card-content>
                 </div>
                 <!-- <div ng-mouseover="expand=true" ng-init="expand=false"> -->
@@ -18,9 +20,7 @@
                   <div class="icon" mat-dialog-actions>
                     <!-- app icon selector -->
                     <app-icon-list class="app-note-list" [note]="note"></app-icon-list>
-                    <button mat-button (click)="onSubmit() || (open = !open)">
-                      Close
-                    </button>
+                    
                   </div>
 
                 <!-- </div> -->

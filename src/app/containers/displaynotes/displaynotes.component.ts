@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { NoteserviceService } from "../../services/note-service.service";
 import { MatSnackBar,MatDialog } from "@angular/material";
 import { Router } from "@angular/router";
 import { FormBuilder } from "@angular/forms";
 import { Note } from "src/app/model/note.model";
 import {UpdateNoteComponent} from "../dashboard/update-note/update-note.component"
+import {environment} from "../../../environments/environment"
 
 @Component({
   selector: "app-displaynotes",
@@ -12,6 +13,8 @@ import {UpdateNoteComponent} from "../dashboard/update-note/update-note.componen
   styleUrls: ["./displaynotes.component.scss"]
 })
 export class DisplaynotesComponent implements OnInit {
+
+
   constructor(
     private _router: Router,
     private _snackBar: MatSnackBar,
@@ -21,7 +24,8 @@ export class DisplaynotesComponent implements OnInit {
   ) {}
 
   private expand: any = false;
-  notes: Note[];
+  @Input() notes: Note[];
+  isPinned: boolean;
 
   ngOnInit() {
     this._noteService.autoRefesh.subscribe(() => {
@@ -55,4 +59,6 @@ export class DisplaynotesComponent implements OnInit {
       console.log('The dialog was closed');
     });
 }
+
+
 }

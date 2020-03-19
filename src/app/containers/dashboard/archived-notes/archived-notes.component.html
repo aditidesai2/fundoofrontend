@@ -12,12 +12,11 @@
         autocomplete="off"
         role="combobox"
         flex="row"
-        matBadge="tick"
-        matBadgePosition="before"
-        matBadgeColor="black"
+     
+        [ngStyle]="{'background-color':note.color}"
       >
         <div>
-          <mat-card-title class="content">
+          <mat-card-title class="content" [ngStyle]="{'background-color':note.color}">
             <textarea
               class="textArea"
               cdkTextareaAutosize
@@ -26,10 +25,11 @@
               cdkAutosizeMaxRows="100"
               placeholder="Title"
               disabled
+              [ngStyle]="{'background-color':note.color}"
               >{{ note.title }}</textarea
             >
           </mat-card-title>
-          <mat-card-content class="content">
+          <mat-card-content class="content" [ngStyle]="{'background-color':note.color}">
             <textarea
               class="textArea"
               cdkTextareaAutosize
@@ -38,53 +38,18 @@
               cdkAutosizeMaxRows="100"
               placeholder="Description"
               disabled
+              [ngStyle]="{'background-color':note.color}"
               >{{ note.description }}</textarea
             >
           </mat-card-content>
         </div>
         <!-- <div ng-mouseover="expand=true" ng-init="expand=false"> -->
         <!-- <div *ngIf="expand">  -->
-        <div class="matCardFooter">
-          <mat-card-footer>
-            <button mat-icon-button matTooltip="Remind me">
-              <mat-icon fontSet="material-icons-outlined">
-                notifications_paused
-              </mat-icon>
-            </button>
-            <button mat-icon-button matTooltip="Collaborator">
-              <mat-icon fontSet="material-icons-outlined">
-                person_add
-              </mat-icon>
-            </button>
-            <button mat-icon-button matTooltip="Change color">
-              <mat-icon fontSet="material-icons-outlined">
-                color_lens
-              </mat-icon>
-            </button>
-            <button mat-icon-button matTooltip="Add image">
-              <mat-icon fontSet="material-icons-outlined">
-                crop_original
-              </mat-icon>
-            </button>
-            <button mat-icon-button matTooltip="Archive">
-              <mat-icon fontSet="material-icons-outlined">
-                archive
-              </mat-icon>
-            </button>
-            <button
-              mat-icon-button
-              [matMenuTriggerFor]="menu"
-              matTooltip="More"
-            >
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>Delete Note</button>
-              <button mat-menu-item>Add label</button>
-            </mat-menu>
-          </mat-card-footer>
-        </div>
-
+          <div class="icon" mat-dialog-actions>
+            <!-- app icon selector -->
+            <app-icon-list class="app-note-list" [note]="note"></app-icon-list>
+            
+          </div>
         <!-- </div> -->
       </mat-card>
     </div>
