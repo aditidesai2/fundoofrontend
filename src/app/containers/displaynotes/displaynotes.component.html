@@ -5,7 +5,7 @@
         <div *ngFor="let note of notes" class="noteCard">
 
             <mat-card class="mat-elevation-z0 matcard " style="margin-left:90px" autocomplete="off" role="combobox" flex="row" [ngStyle]="{'background-color':note.color}" >
-                <app-pin-note [note]="note" (click)="onClickNoteId(note.noteId)"></app-pin-note>
+                <app-pin-note [note]="note" (click)="onPinNote(note.n_id)"></app-pin-note>
                 <div>
                     <mat-card-title class="content"  (click)="openDialog(note)" [ngStyle]="{'background-color':note.color}">
                         <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title" [ngStyle]="{'background-color':note.color}">{{note.title}}</textarea>

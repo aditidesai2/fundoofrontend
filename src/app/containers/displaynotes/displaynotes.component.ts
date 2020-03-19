@@ -23,6 +23,9 @@ export class DisplaynotesComponent implements OnInit {
     private dialog: MatDialog,
   ) {}
 
+  
+  pin: boolean = true;
+  unpin: boolean = true;
   private expand: any = false;
   @Input() notes: Note[];
   isPinned: boolean;
@@ -60,5 +63,25 @@ export class DisplaynotesComponent implements OnInit {
     });
 }
 
+
+onPinNote(n_id) {
+  console.log('pin note called '+n_id);
+  this._noteService.pinUnpinNote(n_id).subscribe(response => {
+    if(!this.pin) {
+      this._snackBar.open('Note pinned', 'Ok', { duration: 4000 });
+      this.pin = true;
+      this.isPinned = true;
+    }
+    if(!this.unpin) {
+      this._snackBar.open('Note unpinned', 'Ok', { duration: 4000});
+      this.unpin = true;
+      this.isPinned = false;
+    }
+  },
+  error => {
+    console.log(error);
+    this._snackBar.open('Error....', 'Ok', { duration: 4000});
+  });
+}
 
 }
