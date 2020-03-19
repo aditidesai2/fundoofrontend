@@ -10,6 +10,7 @@ import { Observable, Subject, BehaviorSubject } from "rxjs";
 import { environment } from "src/environments/environment";
 import { tap } from "rxjs/operators";
 import { Note } from "../model/note.model";
+import {Color} from "../model/color"
 
 @Injectable({
   providedIn: "root"
@@ -17,6 +18,8 @@ import { Note } from "../model/note.model";
 export class NoteserviceService {
   constructor(private _http: HttpClient, private httpservice: HttpService) {}
 
+
+public noteColor: Color;
   private _notesList = new Subject<any>();
   private _subject = new Subject<any>();
   private _content = new BehaviorSubject<number>(0);
@@ -220,4 +223,29 @@ export class NoteserviceService {
         })
       );
 }
+
+public changeColor(noteId: number, color: string) {
+  console.log("service reached with id : " + noteId);
+  console.log(
+    `${environment.NOTE_API_URL}` +
+      "/" +
+      noteId +
+      `${environment.CHANGE_COLOR_NOTE_URL}${color}`
+  );
+  return this.httpservice
+    .patch(
+      `${environment.NOTE_API_URL}` +
+        "/" +
+        noteId +
+        `${environment.CHANGE_COLOR_NOTE_URL}${color}`,
+      {},
+      this.httpOptions
+    )
+    .pipe(
+      tap(() => {
+        this._subject.next();
+      })
+    );
+}
+
 }

@@ -9,9 +9,31 @@
     <button mat-icon-button>
       <mat-icon fontSet="material-icons-outlined" matTooltip="Collaborator">person_add</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Change color">
+    <button mat-icon-button matTooltip="Change color" [matMenuTriggerFor]="colorlist">
       <mat-icon fontSet="material-icons-outlined">palette</mat-icon>
     </button>
+
+    <mat-menu #colorlist="matMenu" [overlapTrigger]="false">
+      <ng-template matMenuContent>
+        <div
+          fxLayout="row"
+          fxLayoutGap="10px"
+          style="margin-top: 1px"
+          *ngFor="let colorsRow of colorsList"
+        >
+          <div *ngFor="let color of colorsRow">
+            <button
+              [ngStyle]="{ 'background-color': color.colorCode }"
+              (click)="changeColor(color)"
+              matTooltip="{{ color.name }}"
+              mat-mini-fab
+            ></button>
+          </div>
+        </div>
+      </ng-template>
+    </mat-menu>
+  
+
     <button mat-icon-button matTooltip="Add Image">
       <mat-icon fontSet="material-icons-outlined">crop_original</mat-icon>
     </button>
