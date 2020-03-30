@@ -1,6 +1,22 @@
-<div *ngIf="!isPinned" (click)="pin=!pin">
-    <a><img src="assets/icons/unpin.svg" id="pin" (click)="onPinNote(note.noteId)" style="margin-left: 230px;"></a>
+<!-- <div *ngIf="!isPinned" (click)="pin=!pin">
+    <a><img src="assets/images/unpin.svg" id="pin" (click)="onPinNote(note.n_id)" style="margin-left: 230px;"></a>
 </div>
  <div *ngIf="isPinned" (click)="isPinned=!isPinned">
-    <a><img src="assets/icons/pinned.svg" id="pin" (click)="onPinNote(note.noteId)" style="margin-left: 230px;"></a>
-</div> 
+    <a><img src="assets/images/pinned.svg" id="pin" (click)="onPinNote(note.n_id)" style="margin-left: 230px;"></a>
+</div>  -->
+
+<div class="pin-unpin-div" *ngIf="!note.isTrashed" fxLayout="column" fxLayoutAlign="start end">
+    <button mat-icon-button>
+      <img
+        id="pin"
+        src="assets/images/unpin.svg"
+        *ngIf="!note.pinned; else pinnedNote"
+        (click)="onPinNote()"
+      />
+    </button>
+    <ng-template #pinnedNote>
+      <button mat-icon-button>
+        <img id="pin" src="assets/images/pinned.svg" (click)="onPinNote()" />
+      </button>
+    </ng-template>
+</div>

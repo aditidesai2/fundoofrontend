@@ -1,4 +1,4 @@
-<div fxLayoutAlign="space around centre" fxLayout="column" fxFlex="100">
+<div fxLayoutAlign="space around centre" fxLayout="column" fxFlex="100" class="imp">
   <link
     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
     rel="stylesheet"
@@ -214,27 +214,30 @@
                 </button>
               </div>
               <mat-divider class="divider"></mat-divider>
-              <div class="labelsClass"><span class="label">LABELS</span></div>
+              <div class="labelsClass"
+              fxLayout="column"
+              fxLayoutAlign="space-around start">
+                <div class="label">LABELS</div>
 
               <div class="secondButton">
-                <div *ngFor="let label of listLabels">
+                <div *ngFor="let label of labelsList">
                   <button class="remindersButton" mat-button>
-                    <mat-icon class="reminderIcon">label</mat-icon>
-                    <span class="reminder-label">{{ label.name }}</span>
+                    <mat-icon fontSet="material-icons-outlined" class="reminderIcon">label</mat-icon>
+                    <span class="reminder-label">{{ label.labelName }}</span>
                   </button>
                 </div>
               </div>
 
-              <div class="labelsButton" (click)="openPopup()">
-                <button class="remindersButton" mat-button>
+              <div class="labelsButton">
+                <button class="remindersButton" mat-button (click)="openEditLabelDialog()">
                   <mat-icon
                     fontSet="material-icons-outlined"
                     class="reminderIcon"
-                    >create</mat-icon
-                  >
+                    >create</mat-icon>
                   <span class="reminder-label">Edit Labels</span>
                 </button>
               </div>
+            </div>
 
               <mat-divider class="divider"></mat-divider>
 

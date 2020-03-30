@@ -13,7 +13,6 @@ import {
   MatDividerModule,
   MatMenuModule ,
   MatBadgeModule,
-  
   MatDialogModule
 } from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -44,7 +43,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatMenuModule,
     MatBadgeModule,
     MatDialogModule
-    
   ],
   exports: [
     MatButtonModule,
@@ -63,7 +61,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatGridListModule,
     MatMenuModule ,
     MatBadgeModule,
-
     MatDialogModule
   ]
 })

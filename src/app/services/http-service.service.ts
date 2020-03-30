@@ -28,4 +28,11 @@ export class HttpService {
     return this._http.patch(url, body, options);
 }
 
+public httpOptions = {
+  headers: new HttpHeaders({
+    "content-type": "application/json",
+    token: localStorage.getItem("token")
+  })
+};
+
 }

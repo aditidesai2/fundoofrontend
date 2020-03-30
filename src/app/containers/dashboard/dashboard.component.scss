@@ -20,6 +20,10 @@
     color: dimgray;
 }
 
+
+.imp {
+    background-color: white;
+}
 .app-bar {
     background-color: white;
     // opacity: 70%;
@@ -74,6 +78,7 @@
     left: 10%;
     top: 2%;
     background-color: whitesmoke;
+
 }
 
 .search-bar {
@@ -260,24 +265,6 @@ element.style {
     ;
 }
 
-// .div-search:focus {
-//     background-color: white;
-// }
-// .search-div:focus {
-//     background-color: white;
-// }
-// .resizedTextbox:focus {
-//     background-color: white;
-// }
-// .searchButton:focus {
-//     background-color: white;
-// }
-// .search:focus {
-//     background-color: white;
-// }
-// .searchmain:focus {
-//     background-color: white;
-// }
 .label {
     height: 0.5px;
     width: 1px;
@@ -299,4 +286,17 @@ div.labelsClass {
 .labelsButton {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.example-container {
+    background-color: white;
+
+}
+
+.sideNav-sidenav{
+    background-color: white;
+}
+
+.mat-card:not([class*=mat-elevation-z0]) {
+    /* box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12); */
 }

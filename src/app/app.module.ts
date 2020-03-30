@@ -23,6 +23,8 @@ import { TrashedNotesComponent } from "./containers/dashboard/trashed-notes/tras
 import { IconListComponent } from './containers/dashboard/icon-list/icon-list.component';
 import { UpdateNoteComponent } from './containers/dashboard/update-note/update-note.component';
 import { PinNoteComponent } from './containers/dashboard/pin-note/pin-note.component';
+import { EditlabelComponent } from './containers/dashboard/label/editlabel/editlabel.component';
+import { AddlabelComponent } from './containers/dashboard/label/addlabel/addlabel.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { PinNoteComponent } from './containers/dashboard/pin-note/pin-note.compo
     TrashedNotesComponent,
     IconListComponent,
     UpdateNoteComponent,
-    PinNoteComponent
+    PinNoteComponent,
+    EditlabelComponent,
+    AddlabelComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,7 @@ import { PinNoteComponent } from './containers/dashboard/pin-note/pin-note.compo
     ReactiveFormsModule,
     HttpClientModule
   ],
-  entryComponents: [ UpdateNoteComponent],
+  entryComponents: [ UpdateNoteComponent, EditlabelComponent, AddlabelComponent],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

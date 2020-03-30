@@ -2,9 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from "@angular/router";
 import { Note } from "../../../model/note.model";
 import { environment } from "src/environments/environment";
-import { MatSnackBar } from "@angular/material";
+import { MatSnackBar, MatDialog } from "@angular/material";
 import { NoteserviceService } from "../../../services/note-service.service";
 import { Color } from "../../../model/color";
+import {AddlabelComponent} from '../../dashboard/label/addlabel/addlabel.component'
 
 @Component({
   selector: 'app-icon-list',
@@ -40,7 +41,9 @@ export class IconListComponent implements OnInit {
   constructor(
     private _noteService: NoteserviceService,
     private _matSnackBar: MatSnackBar,
-    private _router: Router
+    private _router: Router,
+    private _matDialog: MatDialog
+
   ) {}
 @Input() note: Note;
 
@@ -152,6 +155,20 @@ changeColor(color) {
         }
       }
     );
+}
+
+
+openDialog(note): void {
+  console.log("note Id:" + note.id);
+  const dialogRef = this._matDialog.open(AddlabelComponent, {
+    width: '250px',
+    height: 'auto',
+
+    data: { note }
+  });
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  });
 }
 
 

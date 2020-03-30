@@ -1,14 +1,17 @@
-<div fxLayout="row" fxLayoutAlign="space-around-center">
+<div fxLayout="row" fxLayoutAlign="space-around-center" class="displaynotes">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
 
     <div>
         <div *ngFor="let note of notes" class="noteCard">
 
             <mat-card class="mat-elevation-z0 matcard " style="margin-left:90px" autocomplete="off" role="combobox" flex="row" [ngStyle]="{'background-color':note.color}" >
-                <app-pin-note [note]="note" (click)="onPinNote(note.n_id)"></app-pin-note>
+         
                 <div>
                     <mat-card-title class="content"  (click)="openDialog(note)" [ngStyle]="{'background-color':note.color}">
-                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title" [ngStyle]="{'background-color':note.color}">{{note.title}}</textarea>
+                        <app-pin-note [note]="note" (click)="onPinNote(note.n_id)"></app-pin-note>
+                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title" [ngStyle]="{'background-color':note.color}">{{note.title}}
+                        
+                    </textarea>
                     </mat-card-title>
 
                     <mat-card-content class="content" (click)="openDialog(note)" [ngStyle]="{'background-color':note.color}">
